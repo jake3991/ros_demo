@@ -18,7 +18,7 @@ pub_demo::~pub_demo(){}
  */
 void pub_demo::init_node(){
 
-    this->pub = this->n.advertise<std_msgs::String>("topic", 10);
+    //define the publisher object
 }
 
 /**
@@ -28,32 +28,12 @@ void pub_demo::init_node(){
 void pub_demo::talker(){
 
     //define the ros rate
-    ros::Rate loop_rate(10);
 
     //counter varible for messages
     int count = 0;
 
-    //while loop, run while ros is active
-    while (ros::ok())
-    {
-            //define the message
-            std_msgs::String msg;
-
-            //populate the ros message
-            std::stringstream ss;
-            ss << "hello world " << count;
-            msg.data = ss.str();
-
-            //publish the message
-            this->pub.publish(msg);
-
-            ros::spinOnce();
-
-            //sleep to maintain our rosrate
-            loop_rate.sleep();
-            count += 1;
-
-        }
+    //while loop, run while ros is active to publish some data
+  
 }
 
 

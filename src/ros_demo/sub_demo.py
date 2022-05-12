@@ -17,14 +17,8 @@ class SubscriberDemo():
         """
 
         # read a parameter here, we want the topic to publish to
-        # self.sub_topic_name = rospy.get_param(ns + "topic_name")
 
         # define the subscriber object here
-        # This takes the following information
-        # 1. Topic
-        # 2. message type
-        # 3. callback function, the function that runs when we get a message
-        # 4. the subscriber queue_size
         self.sub = rospy.Subscriber("topic", String, callback=self.callback, queue_size=10)
 
     def callback(self,msg:String)->None:
@@ -35,7 +29,7 @@ class SubscriberDemo():
             msg (String): the incoming message
         """
 
-        print(msg.data)
+        # do somthing with this message
 
 
 
