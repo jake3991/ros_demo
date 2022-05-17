@@ -18,15 +18,28 @@ class PublisherDemo():
 
         # read a parameter here, we want the topic to publish to
 
-        # define the publisher object here
+        # define the publisher object here 
+        self.pub = rospy.Publisher("white_board",String,queue_size=10)
 
     def talk(self)->None:
         """Publish some information, use a while loop to keep publishing
         """
 
         # define the rate at which we run this loop
-        
+        rate = rospy.Rate(10)
+
         # write a loop to publish a message
+        while not rospy.is_shutdown():
+
+            # build a message
+            msg = String()
+            msg.data = "message to the void"
+
+            # publish a message
+            self.pub.publish(msg)
+
+            # sleep for some time
+            rate.sleep() 
 
 
 
