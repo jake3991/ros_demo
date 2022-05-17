@@ -19,7 +19,6 @@ class SubscriberDemo():
         # read a parameter here, we want the topic to publish to
 
         # define the subscriber object here
-        self.sub = rospy.Subscriber("topic", String, callback=self.callback, queue_size=10)
 
     def callback(self,msg:String)->None:
         """The callback function, this function runs everytime we get a message on the topic
