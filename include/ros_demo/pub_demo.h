@@ -10,10 +10,11 @@ class pub_demo
         ros::NodeHandle n;
         ros::Publisher pub;
     public:
-        pub_demo();
-        ~pub_demo();
-        void init_node();
-        void talker();
+        pub_demo(); //class con
+        ~pub_demo(); //class des
+        void init_node(); //create the publisher object
+        void talker(); //while loop, published message at some ros rate
+        void jakes_question(int flag);
 };
 
 

@@ -20,6 +20,7 @@ sub_demo::~sub_demo(){}
 void sub_demo::init_node(){
 
     //define some subscriber
+    this->sub = this->n.subscribe("white_board",10, &sub_demo::callback,this);
 }
 
 /**
@@ -29,6 +30,7 @@ void sub_demo::init_node(){
 void sub_demo::callback(const std_msgs::String::ConstPtr& msg){
 
     //do somthing with this message
+    ROS_INFO(msg->data.c_str());
 }
 
 

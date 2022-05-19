@@ -10,10 +10,10 @@ class sub_demo
         ros::NodeHandle n;
         ros::Subscriber sub;
     public:
-        sub_demo();
-        ~sub_demo();
-        void init_node();
-        void callback(const std_msgs::String::ConstPtr& msg);
+        sub_demo(); //class con
+        ~sub_demo(); //class des
+        void init_node(); //init node function
+        void callback(const std_msgs::String::ConstPtr& msg); //callback function
 };
 
 

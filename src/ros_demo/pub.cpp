@@ -19,6 +19,7 @@ pub_demo::~pub_demo(){}
 void pub_demo::init_node(){
 
     //define the publisher object
+    this->pub = this->n.advertise<std_msgs::String>("white_board",10);
 }
 
 /**
@@ -28,12 +29,35 @@ void pub_demo::init_node(){
 void pub_demo::talker(){
 
     //define the ros rate
+    ros::Rate loop_rate(10);
 
     //counter varible for messages
     int count = 0;
 
-    //while loop, run while ros is active to publish some data
+    while(ros::ok()){
+
+        //instance of a message
+        std_msgs::String msg;
+
+        //populate that message
+        std::stringstream ss;
+        ss << "hello world" << count;
+        msg.data = ss.str();
+
+        //publish the message
+        this->pub.publish(msg);
+
+        //sleep per the loop
+        loop_rate.sleep();
+        count += 1;
+
+    }
   
+}
+
+void pub_demo::jakes_question(int flag){
+
+
 }
 
 
