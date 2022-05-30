@@ -11,7 +11,11 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
+  message_generation
 )
+
+
 
 include_directories(
   include
@@ -22,7 +26,16 @@ include_directories(
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
 catkin_python_setup()
 
+add_message_files(
+   FILES
+   Jake.msg
+)
 
+
+generate_messages(
+   DEPENDENCIES
+   sensor_msgs
+)
 
 ###################################
 ## catkin specific configuration ##
@@ -42,7 +55,6 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-catkin_python_setup()
 
 
 ###########

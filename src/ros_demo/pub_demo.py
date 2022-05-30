@@ -1,5 +1,6 @@
 import rospy
 from std_msgs.msg import String
+from ros_demo.msg import Jake
 
 class PublisherDemo():
     """A class to implment a simple publisher
