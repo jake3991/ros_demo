@@ -1,0 +1,15 @@
+<launch>
+
+    <!-- publisher -->
+    <node pkg="ros_demo" name="pub_node" type="pub_node.py" output="screen">
+        <!-- <param name="topic" value="whiteboard"/> -->
+        <rosparam command="load" file="$(find ros_demo)/config/topic.yaml"/>
+    </node>
+
+    <!-- sub -->
+    <node pkg="ros_demo" name="sub_node" type="sub_node.py" output="screen">
+        <!-- <param name="topic" value="whiteboard"/> -->
+        <rosparam command="load" file="$(find ros_demo)/config/topic.yaml"/>
+    </node>
+
+</launch>

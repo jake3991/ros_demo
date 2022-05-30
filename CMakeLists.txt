@@ -34,12 +34,15 @@ catkin_python_setup()
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES ros_demo
-  CATKIN_DEPENDS roscpp rospy std_msgs
-  DEPENDS system_lib
+
 )
 
+include_directories(
+# include
+  ${catkin_INCLUDE_DIRS}
+)
+
+catkin_python_setup()
 
 
 ###########
@@ -48,10 +51,7 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-# include
-  ${catkin_INCLUDE_DIRS}
-)
+
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}

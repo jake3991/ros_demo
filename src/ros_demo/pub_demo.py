@@ -17,9 +17,11 @@ class PublisherDemo():
         """
 
         # read a parameter here, we want the topic to publish to
+        topic = rospy.get_param(ns + "topic")
+        print("The pub topic is: ", topic)
 
         # define the publisher object here 
-        self.pub = rospy.Publisher("white_board",String,queue_size=10)
+        self.pub = rospy.Publisher(topic,String,queue_size=10)
 
     def talk(self)->None:
         """Publish some information, use a while loop to keep publishing
