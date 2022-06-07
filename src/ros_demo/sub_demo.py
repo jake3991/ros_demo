@@ -1,6 +1,8 @@
 import rospy
 from std_msgs.msg import String
 
+from ros_demo.msg import Jake
+
 class SubscriberDemo():
     """A class to implement a simple subscriber
     """
@@ -21,7 +23,7 @@ class SubscriberDemo():
         print("The sub topic is: ", topic)
 
         # define the subscriber object here
-        self.sub = rospy.Subscriber(topic,String,callback=self.callback,queue_size=10)
+        self.sub = rospy.Subscriber(topic,Jake,callback=self.callback,queue_size=10)
 
     def callback(self,msg:String)->None:
         """The callback function, this function runs everytime we get a message on the topic
